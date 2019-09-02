@@ -1,13 +1,61 @@
-// computer generates random letter
-    // is an array needed here? if so, it will need a math.floor(math.random() * array.length)
+// VARIABLES
+var wins = document.getElementById("wins");
 
-// user guesses a letter
-    // this will be a document.onkeyup event
+var losses = document.getElementById("losses");
 
-// user's guess is documented in the "guesses so far" line
+var guessesLeft = document.getElementById("guessesLeft");
 
-// guesses left decreases by 1
+var userGuesses = document.getElementById("userGuesses");
 
-// if the user's guess === the computer's guess then wins increases by 1
+var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-// if guesses left reaches 0, losses increases by 1 and computer's letter is displayed
+var isGameOver = false;
+
+// Assigning scores and guesses initial values
+wins.textContent = 0;
+
+losses.textContent = 0;
+
+guessesLeft.textContent = 10;
+
+// userGuesses.textContent = keystrokes.toString();
+
+// Computer generates a random letter
+function generateLetter() {
+    return computerLetter = letters[Math.floor(Math.random() * letters.length)];
+}
+
+generateLetter();
+console.log("computer letter: " + computerLetter);
+
+function gameOver() {
+    
+    guessesLeft.textContent = 10;
+    
+    generateLetter();
+    console.log("new computer letter: " + computerLetter);
+
+}
+
+// user guesses a letter, it is added to userGuesses element, and guessesLeft decreases by 1
+document.onkeyup = function (event) {
+    let userInput = event.key;
+    userGuesses.textContent += userInput;
+    guessesLeft.textContent--;
+    // console.log(losses.textContent);
+
+    // if the user's guess === the computer's guess then wins increases by 1
+    if (userInput === computerLetter) {
+        wins.textContent++;
+        var isGameOver = true;
+    }
+    else if (guessesLeft.textContent < 1) {
+        losses.textContent++;
+        var isGameOver = true;
+    }
+    console.log(isGameOver);
+    if (isGameOver) {
+        gameOver();
+    }
+}
+
