@@ -53,10 +53,11 @@ document.onkeyup = function (event) {
     // if the user's guess equals the computer's guess then wins increases by 1
     if (userInput === computerLetter) {
         wins.textContent = parseInt(wins.textContent) + 1;
+        alert("Nice! You must be a psychic!");
         var isGameOver = true;
-        console.log(typeof(parseInt(wins.textContent)));
     } else if (guessesLeft.textContent < 1) {
         losses.textContent = parseInt(losses.textContent) + 1;
+        alert("Sorry! I was thinking of the letter ' " + computerLetter + " '.");
         var isGameOver = true;
     }
     
