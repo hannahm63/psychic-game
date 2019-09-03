@@ -11,19 +11,34 @@
 </head>
 
 <body>
-    
-    <h1 id="title">Psychic Game</h1>
-    <h2>Guess what letter I'm thinking of...</h2>
-    <hr>
-    <h3>Your guesses so far: </h3>
-    <h3 id="userGuesses"></h3>
-    <h2><span id="computerLetter"></span></h2>
-    <hr>
-    <h3>Wins: <span id="wins"></span></h3>
-    <h3>Losses: <span id="losses"></span></h3>
-    <h3>Guesses left: <span id="guessesLeft"></span></h3>
-    
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 jumbotron">
+
+                <h1 id="title" class="display-4">Psychic Game</h1>
+
+                <p class="lead">Guess what letter I'm thinking of...</p>
+
+                <hr class="my-4">
+
+                <p>Guesses left: <span id="guessesLeft">10</span></p>
+
+                <p>Your guesses so far: <span id="userGuesses"></span></p>
+
+                <!-- <h2><span id="computerLetter"></span></h2> -->
+
+                <hr class="my-4">
+
+                <p>Wins: <span id="wins"></span></p>
+
+                <p>Losses: <span id="losses"></span></p>
+
+            </div>
+        </div>
+    </div>
+
     <script src="./assets/javascript/game.js"></script>
+
 </body>
 
 </html>
